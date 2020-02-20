@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import 'marx-css/css/marx.css'
+import PriorityForm from './PriorityForm'
 
-function App() {
+const App = () => {
+  const [element, updateElement] = useState({})
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'row',
+        maxHeight: '100vh'
+      }}>
+      <div style={{ flexGrow: 3 }}>
+        <h1>Reading Heap</h1>
+      </div>
+      <div style={{ flexGrow: 1, height: '100vh', overflowY: 'auto' }}>
+        <PriorityForm
+          element={{ name: 'hello' }}
+          updateElement={updateElement}
+        />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
