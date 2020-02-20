@@ -1,14 +1,32 @@
-import React, { useMemo, useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
+const booleanRule = ([key, positive]) => element =>
+  (element[key] ?? false) === true ? positive : 0
 
 const computePriority = element => {
-  console.log(element)
-  return 0
+  const rules = [
+    ['abstract', 3],
+    ['summary', 3],
+    ['code', 5],
+    ['includeExamples', 2],
+    ['longRead', -1],
+    ['notation', 3],
+    ['someoneElse', 5],
+    ['ownFinding', 2],
+    ['otherReferences', 2]
+  ].map(booleanRule)
+
+  return rules.reduce((acc, v, i) => {
+    return v(element) + acc
+  }, 0)
 }
 
-const PriorityForm = ({ element: baseElement, updateElement }) => {
+const PriorityForm = ({ element: baseElement, onSubmit }) => {
   const [element, onElementChange] = useState(baseElement)
-  const priority = useMemo(() => {
-    return computePriority(element)
+  const [priority, setPriority] = useState(computePriority(element))
+
+  useEffect(() => {
+    setPriority(computePriority(element))
   }, [element])
 
   const handleFieldChange = ({ target: { name, value } }) => {
@@ -19,9 +37,9 @@ const PriorityForm = ({ element: baseElement, updateElement }) => {
     onElementChange({ ...element, [name]: checked })
   }
 
-  const onSubmit = e => {
+  const onFormSubmit = e => {
     e.preventDefault()
-    console.log()
+    onSubmit(element)
   }
 
   return (
@@ -30,7 +48,7 @@ const PriorityForm = ({ element: baseElement, updateElement }) => {
         Priority: <span>{priority}</span>
       </h2>
 
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onFormSubmit}>
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -108,9 +126,7 @@ const PriorityForm = ({ element: baseElement, updateElement }) => {
             value={element.longRead ?? false}
             onChange={handleBooleanChange}
           />
-          <label htmlFor="longRead">
-            Could you read it in a reasonable time?
-          </label>
+          <label htmlFor="longRead">Is it too long?</label>
         </div>
         <div>
           <input
