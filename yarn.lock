@@ -6264,6 +6264,13 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+marx-css@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/marx-css/-/marx-css-3.0.7.tgz#aba251526b5ba037cfd861282cd9e406215d8bbf"
+  integrity sha512-UAOus6LS/ryAMvufQueecl0Z9kJ5BoVWx0eE1u9xMAe+95aT8MuceB9ygp+Xfq15OrSIMYUnVZa5U/g+TAOBRQ==
+  dependencies:
+    sanitize.css "^8.0.0"
+
 md5.js@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/md5.js/-/md5.js-1.3.5.tgz#b5d07b8e3216e3e27cd728d72f70d1e6a342005f"
@@ -8782,6 +8789,11 @@ sanitize.css@^10.0.0:
   resolved "https://registry.yarnpkg.com/sanitize.css/-/sanitize.css-10.0.0.tgz#b5cb2547e96d8629a60947544665243b1dc3657a"
   integrity sha512-vTxrZz4dX5W86M6oVWVdOVe72ZiPs41Oi7Z6Km4W5Turyz28mrXSJhhEBZoRtzJWIv3833WKVwLSDWWkEfupMg==
 
+sanitize.css@^8.0.0:
+  version "8.0.1"
+  resolved "https://registry.yarnpkg.com/sanitize.css/-/sanitize.css-8.0.1.tgz#bd38f9752b0972849d2de260daeaa99878fd349e"
+  integrity sha512-5Gsh+BmqyhixJIh68mpP1NkiiKNTeQi9WPQvdVPxfcFIkiuXKcDkKHhYekxheK45KI52bIUC/FXK8R5HGOza5Q==
+
 sass-loader@8.0.2:
   version "8.0.2"
   resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-8.0.2.tgz#debecd8c3ce243c76454f2e8290482150380090d"
@@ -10138,9 +10150,9 @@ websocket-driver@>=0.5.1:
     websocket-extensions ">=0.1.1"
 
 websocket-extensions@>=0.1.1:
-  version "0.1.3"
-  resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
-  integrity sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.4.tgz#7f8473bc839dfd87608adb95d7eb075211578a42"
+  integrity sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
 
 whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3, whatwg-encoding@^1.0.5:
   version "1.0.5"
